@@ -1362,6 +1362,7 @@ class DistributedTest:
                 for e in events:
                     self.assertEqual(e.count, 1)
                     self.assertGreaterEqual(e.cpu_time, 0)
+                    self.assertFalse(e.input_shapes == [])
 
         # ALL REDUCE
         def _test_all_reduce_helper(
